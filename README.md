@@ -1,5 +1,10 @@
 # CS317_Program1
-A project that compares the comparisons used between binary and sequential search.
+A project that compares the comparisons used between binary and sequential search.<br>
+This code can also be found at: [https://github.com/Jedimaster4559/CS317_Program1](https://github.com/Jedimaster4559/CS317_Program1)<br>
+NOTE: Repo will not be public until after 11:59 PM on Wednesday, June 24th, 2020.
+
+## Analysis/Results
+To see the results of this study, see the pdf in this folder titled `ComparisonOfSequentialAndBinarySearch_NathanielSolomon_20200623_2218.pdf`<br>
 
 ## Environment
 - Java: jdk1.8.0_231

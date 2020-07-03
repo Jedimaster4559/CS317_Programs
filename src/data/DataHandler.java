@@ -14,6 +14,10 @@ public class DataHandler {
 
     private DataHandler(){
         values = new ArrayList<>();
+        File searchOutputFile = new File("search_output.csv");
+        searchOutputFile.delete();    // Delete the output file if it already exists.
+        File sortOutputFile = new File("sort_output.csv");
+        sortOutputFile.delete();
     }
 
     private static DataHandler getInstance(){
@@ -30,8 +34,6 @@ public class DataHandler {
     public static void start(){
         getInstance();
         readFile();
-        File outputFile = new File("output.csv");
-        outputFile.delete();    // Delete the output file if it already exists.
     }
 
     public static int[] getValues(int length){
@@ -72,17 +74,26 @@ public class DataHandler {
         Collections.sort(instance.values);
     }
 
-    public static void writeFile(String s){
+    public static void writeSearch(String s){
+        writeFile(s, "search_output.csv");
+    }
+
+    public static void writeSort(String s){
+        writeFile(s, "sort_output.csv");
+    }
+
+    private static boolean writeFile(String s, String fileName){
         try{
-            FileWriter writer = new FileWriter("output.csv", true);
+            FileWriter writer = new FileWriter(fileName, true);
             writer.append(s);
             writer.append("\n");
             writer.close();
+            return true;
         } catch(IOException e){
             System.out.println("Unable to write to file");
             System.exit(2);
         }
-
+        return false;
     }
 
 

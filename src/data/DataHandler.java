@@ -18,6 +18,8 @@ public class DataHandler {
         searchOutputFile.delete();    // Delete the output file if it already exists.
         File sortOutputFile = new File("sort_output.csv");
         sortOutputFile.delete();
+        File sortWorstOutputFile = new File("sort_worst_output.csv");
+        sortOutputFile.delete();
     }
 
     private static DataHandler getInstance(){
@@ -58,6 +60,7 @@ public class DataHandler {
         DataHandler instance = getInstance();
         try{
             JFrame frame = new JFrame();
+            frame.setAlwaysOnTop(true);
             JFileChooser fc = new JFileChooser();
             fc.showOpenDialog(frame);
             File inputFile = fc.getSelectedFile();
@@ -80,6 +83,10 @@ public class DataHandler {
 
     public static void writeSort(String s){
         writeFile(s, "sort_output.csv");
+    }
+
+    public static void writeWorstSort(String s) {
+        writeFile(s, "sort_worst_output.csv");
     }
 
     private static boolean writeFile(String s, String fileName){

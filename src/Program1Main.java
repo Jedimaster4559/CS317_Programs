@@ -20,7 +20,6 @@ public class Program1Main {
                     throw new Exception();
                 }
                 validInput = true;
-                input.close();
             } catch (Exception e){
                 validInput = false;
                 System.out.println("Please enter a valid number (1-3):");
@@ -28,11 +27,12 @@ public class Program1Main {
         }
 
         if(process == 1){
-
+            Sort.Run();
         } else if (process == 2){
             Search.Run();
         } else {
             Search.Run();
+            Sort.Run();
         }
 
     }

@@ -12,10 +12,6 @@ public class SortAverage {
 
     public SortAverage(int listSize){
         this.listSize = listSize;
-        this.worstQuickPermutation = new int[listSize];
-        this.worstInsertionPermutation = new int[listSize];
-        this.worstQuickPermutationComparisons = Integer.MIN_VALUE;
-        this.worstInsertionPermutationComparisons = Integer.MIN_VALUE;
         this.quickAverage = 0;
         this.insertionAverage = 0;
         this.resultsAdded = 0;
@@ -26,16 +22,6 @@ public class SortAverage {
         quickAverage = (quickAverage * (resultsAdded / (resultsAdded + 1))) + (result.getQuickCount() * (1 / (resultsAdded + 1)));
         insertionAverage = (insertionAverage * (resultsAdded / (resultsAdded + 1))) + (result.getInsertionCount() * (1 / (resultsAdded + 1)));
         resultsAdded++;
-
-        if(result.getInsertionCount() > worstInsertionPermutationComparisons){
-            worstInsertionPermutationComparisons = result.getInsertionCount();
-            worstInsertionPermutation = result.getList();
-        }
-
-        if(result.getQuickCount() > worstQuickPermutationComparisons){
-            worstQuickPermutationComparisons = result.getQuickCount();
-            worstQuickPermutation = result.getList();
-        }
     }
 
     public String toString(){

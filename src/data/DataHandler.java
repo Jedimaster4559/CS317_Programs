@@ -74,6 +74,10 @@ public class DataHandler {
             System.out.println("That is an invalid file location. Exiting Now...");
             System.exit(1);
         }
+
+    }
+
+    public static void sortData(){
         Collections.sort(instance.values);
     }
 

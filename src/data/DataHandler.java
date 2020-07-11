@@ -19,7 +19,7 @@ public class DataHandler {
         File sortOutputFile = new File("sort_output.csv");
         sortOutputFile.delete();
         File sortWorstOutputFile = new File("sort_worst_output.csv");
-        sortOutputFile.delete();
+        sortWorstOutputFile.delete();
     }
 
     private static DataHandler getInstance(){

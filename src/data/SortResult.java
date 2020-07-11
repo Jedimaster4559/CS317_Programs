@@ -1,5 +1,7 @@
 package data;
 
+import processes.Sort;
+
 public class SortResult {
     private int insertionCount;
     private int quickCount;
@@ -9,6 +11,11 @@ public class SortResult {
         this.insertionCount = 0;
         this.quickCount = 0;
         this.list = list;
+    }
+
+    public SortResult(){
+        this.insertionCount = 0;
+        this.quickCount = 0;
     }
 
     public void addQuick(){

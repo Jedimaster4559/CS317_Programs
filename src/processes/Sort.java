@@ -38,6 +38,23 @@ public class Sort {
             DataHandler.writeSort(average.toString());
 
             // Demonstrate Worst Case Situations
+            // Pre-sorting to create worst cases
+            int[] insertionWorstList = DataHandler.getValues(i);
+            QuickSort.sort(insertionWorstList, new SortResult());
+            int[] temp = insertionWorstList.clone();
+            for(int j = 0; j < temp.length; j++){
+                insertionWorstList[j] = temp[temp.length - j - 1];
+            }
+            int[] quickWorstList = DataHandler.getValues(i);
+            QuickSort.sort(quickWorstList, new SortResult());
+            // Performing analysis on worst cases
+            SortResult result = new SortResult();
+            SortAverage worstAverage = new SortAverage(i);
+            InsertionSort.sort(insertionWorstList, result);
+            QuickSort.sort(quickWorstList, result);
+            worstAverage.addResult(result);
+            // Record Results
+            DataHandler.writeWorstSort(worstAverage.toString());
         }
     }
 
